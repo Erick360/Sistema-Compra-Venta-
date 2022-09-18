@@ -3,7 +3,7 @@ class Conectar {
   protected $dbh;
   protected function conexion(){
   try {
-    $conectar = $this->$dbh = new PDO ("mysql:local=localhost;dbname = dbproyecto","root","");
+    $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=dbproyecto","root","");
     return $conectar;
 
   } catch (Exception $e) {

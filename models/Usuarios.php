@@ -1,21 +1,22 @@
 <?php
 require_once("../config/conexion.php");
 
-class usuarios extends Conectar {
+class Usuarios extends Conectar {
 //listado de usuarios
-  public function get_usuarios(){
-    $conectar=parent::conexion();
-    parent::set_names();
+public function get_usuarios(){
 
-    $sql = "select * from usuarios";
-    $sql = $conectar->prepare($sql);
-    $sql->execute();
+  $conectar=parent::conexion();
+  parent::set_names();
 
-    return $resultado=$sql->fetchAll();
+  $sql="select * from usuarios";
+  $sql=$conectar->prepare($sql);
+  $sql->execute();
+
+  return $resultado=$sql->fetchAll();
   }
 
 public function registrar_usuario($nombre,$apellido,$cedula,$telefono,$email,$direccion,$cargo,
-$usuario,$password,$password2,$fecha_ingreso,$estado){
+$usuario,$password,$password2,$estado){
 
     $conectar = parent::conexion();
     parent::set_names();
@@ -38,7 +39,7 @@ $usuario,$password,$password2,$fecha_ingreso,$estado){
   }
   //funcion que editar informacion del usuario
   public function editar_usuario($id_usuario,$nombre,$apellido,$cedula,$telefono,$email,$direccion,$cargo,
-$usuario,$password,$password2,$fecha_ingreso,$estado){
+$usuario,$password,$password2,$estado){
     $conectar=parent::conexion();
     parent::set_names();
 
@@ -53,7 +54,7 @@ $usuario,$password,$password2,$fecha_ingreso,$estado){
       usuario=?,
       password=?,
       password2=?,
-      estado
+      estado = ?
 
       where
       id_usuario=?
@@ -75,7 +76,7 @@ $usuario,$password,$password2,$fecha_ingreso,$estado){
       $sql->execute();
   }
 //funcion que muestra los datos del usuario mediante su id
-public function get_usuario_id($id_usuario){
+public function get_usuario_por_id($id_usuario){
 $conectar=parent::conexion();
   parent::set_names();
     $sql = "select * from usuarios where id_usuario=? ";
@@ -87,7 +88,7 @@ $conectar=parent::conexion();
 }
 
 //Funcion que edita el estado de los usuarios
-public function estado_usuario($id_usuario,$estado){
+public function editar_estado($id_usuario,$estado){
   $conectar = parent::conexion();
 
 //este parametro se envia via ajax
@@ -98,17 +99,18 @@ public function estado_usuario($id_usuario,$estado){
   }
   parent::set_names();
 
-    $sql = "updates usuarios set
+    $sql = "update usuarios set
     estado=?
     where
      id_usuario=?
      ";
 
-     $sql  = $conectar->prepare($sql);
-     $sql->bindValue(1, $id_usuario);
-     $sql->bindValue(2, $estado);
+     $sql = $conectar->prepare($sql);
+     $sql->bindValue(1, $estado);
+     $sql->bindValue(2, $id_usuario);
      $sql->execute();
    }//fin de mi funcion estado_usuario
+   
 //Funcion para validar informacion del usuario
 
 public function get_cedula_correo_del_usuario($cedula,$email){

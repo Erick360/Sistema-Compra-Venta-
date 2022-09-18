@@ -135,7 +135,7 @@ var tabla;
 
     //Editar estado del usuario
     function cambiarEstado(id_usuario,est){
-    bootbox.confirm("¿Está Seguro de cambiar de estado?", function(result){
+    bootbox.confirm("¿Está Seguro de cambiar el estado?", function(result){
   if(result)
   {
       $.ajax({

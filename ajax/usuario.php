@@ -24,12 +24,12 @@ $estado = isset($_POST["estado"]);
 switch($_GET["op"]) {
   case "guardaryeditar":
     //verificamos si existe la cedula y correo
-    $datos = $usarios->get_cedula_correo_del_usuario($_POST["cedula"] , $_POST["email"]);
+    $datos = $usuarios->get_cedula_correo_del_usuario($_POST["cedula"] , $_POST["email"]);
     if ($password == $password2) {
       if (empty($_POST["id_usuario"])) {
         if (is_array($datos)==true and count($datos)==0) {
           $usuarios->registrar_usuario($nombre,$apellido,$cedula,$telefono,$email,$direccion,$cargo,
-          $usuario,$password,$password2,$fecha_ingreso,$estado);
+          $usuario,$password,$password2,$estado);
 
           $messages[] = "El usuario se registro correctamente";
 
@@ -39,7 +39,7 @@ switch($_GET["op"]) {
 
       }else{
         $usuarios->editar_usuario($id_usuario,$nombre,$apellido,$cedula,$telefono,$email,$direccion,$cargo,
-        $usuario,$password,$password2,$fecha_ingreso,$estado);
+        $usuario,$password,$password2,$estado);
 
         $messages[] = "El usuario se edito correctamente";
       }//fin de mi validacion is_array
@@ -87,10 +87,10 @@ if (isset($errors)) {
       if (is_array($datos)==true and count($datos)>0) {
         foreach ($datos as $row) {
           $output["cedula"] = $row["cedula"];
-          $output["nombre"] = $row["nombre"];
-          $output["apellido"] = $row["apellido"];
+          $output["nombre"] = $row["nombres"];
+          $output["apellido"] = $row["apellidos"];
           $output["cargo"] = $row["cargo"];
-          $output["usuario"] = $row["ususario"];
+          $output["usuario"] = $row["usuario"];
           $output["password"] = $row["password"];
           $output["password2"] = $row["password2"];
           $output["telefono"] = $row["telefono"];
@@ -159,25 +159,25 @@ if (isset($errors)) {
           $sub_array[] = $row["cedula"];
           $sub_array[] = $row["nombres"];
           $sub_array[] = $row["apellidos"];
-          $sub_array[] = $row["usario"];
+          $sub_array[] = $row["usuario"];
           $sub_array[] = $row["telefono"];
           $sub_array[] = $cargo;
           $sub_array[] = $row["correo"];
           $sub_array[] = $row["direccion"];
           $sub_array[] = date("d-m-Y",strtotime($row["fecha_ingreso"]));
 
-          $sub_array[] = '<button type="button" onClick="cambiarEstado(
-          '.$row["id_usuario"].','.$row["estado"].');"
-          name="estado" id="'.$row["id_usuario"].'" class="'.$atrib.'">'
-          .$est.'</button>';
+          $sub_array[] = '<button type="button" onClick="cambiarEstado('
+          .$row["id_usuario"].','.$row["estado"].');" name="estado" id="
+          '.$row["id_usuario"].'" class="'.$atrib.'">'.$est.'</button>';
 
-          $sub_array[] = '<button type="button" onClick="mostrar('.$row["id_usuario"].');"
-          id="'.$row["id_usuario"].'" class="btn btn-warning btn-md update"><i
-          class="glyphicon glyphicon-edit"></i> Editar </button>';
+          $sub_array[] = '<button type="button" onClick="mostrar(
+          '.$row["id_usuario"].');"  id="'.$row["id_usuario"].'" 
+          class="btn btn-warning btn-md update"><i class="glyphicon glyphicon-edit">
+          </i> Editar</button>';
 
-          $sub_array[] = '<button type="button" onClick="eliminar('.$row["id_usuario"].');"
-          id="'.$row["id_usuario"].'" class="btn btn-danger btn-md"><i
-          class="glyphicon glyphicon-edit"></i> Eliminar </button>';
+          $sub_array[] = '<button type="button" onClick="eliminar('
+          .$row["id_usuario"].');"  id="'.$row["id_usuario"].'" 
+          class="btn btn-danger btn-md"><i class="glyphicon glyphicon-edit"></i> Eliminar</button>';
 
           $data[] = $sub_array;
       }//fin de nuestro foreach
