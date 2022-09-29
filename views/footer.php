@@ -1,8 +1,9 @@
-  <footer class="main-footer">
+
+ <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; NewHorizons 2022.</strong> All rights
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
 
@@ -214,18 +215,24 @@
 <script src="../public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- DataTables -->
+
 <!--<script src="../public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>-->
-<script src="../public/datatables/jquery.dataTables.min.js"></script>
-<script src="../public/datatables/dataTables.buttons.min.js"></script>
-<script src="../public/datatables/buttons.html5.min.js"></script>
-<script src="../public/datatables/buttons.colVis.min.js"></script>
-<script src="../public/datatables/jszip.min.js"></script>
-<script src="../public/datatables/pdfmake.min.js"></script>
-<script src="../public/datatables/vfs_fonts.js"></script>
+
+   <script src="../public/datatables/jquery.dataTables.min.js"></script>
+    <script src="../public/datatables/dataTables.buttons.min.js"></script>
+    <script src="../public/datatables/buttons.html5.min.js"></script>
+    <script src="../public/datatables/buttons.colVis.min.js"></script>
+    <script src="../public/datatables/jszip.min.js"></script>
+    <script src="../public/datatables/pdfmake.min.js"></script>
+    <script src="../public/datatables/vfs_fonts.js"></script>
+
+
 
 <!-- Morris.js charts -->
 <script src="../public/bower_components/raphael/raphael.min.js"></script>
 <script src="../public/bower_components/morris.js/morris.min.js"></script>
+
+
 <!-- Sparkline -->
 <script src="../public/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
@@ -246,11 +253,13 @@
 <script src="../public/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="../public/dist/js/adminlte.min.js"></script>
+
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../public/dist/js/pages/dashboard.js"></script>
+<!--<script src="../public/dist/js/pages/dashboard.js"></script>-->
 <!-- AdminLTE for demo purposes -->
 <script src="../public/dist/js/demo.js"></script>
-<!-- Libreria DE Mensaje Modal -->
+
+  <!--LIBRERIA DE MENSAJE MODAL-->
 <script src="js/bootbox.min.js"></script>
 
 </body>
