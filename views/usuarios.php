@@ -106,7 +106,7 @@
           <br />
           
           <label>Dirección</label>
-          <textarea cols="90" rows="3" id="direccion" name="direccion"  placeholder="Direccion ..." required pattern="^[a-zA-Z0-9_áéíóúñ°\s]{0,200}$">
+          <textarea cols="85" rows="3" id="direccion" name="direccion"  placeholder="Direccion ..." required pattern="^[a-zA-Z0-9_áéíóúñ°\s]{0,200}$">
           </textarea>
           <br />
           
