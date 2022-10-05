@@ -170,14 +170,20 @@
 
           </li>
 
-           <li class="">
+           <li class="treeview">
           <a href="compras.php">
             <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Compras</span>
             <span class="pull-right-container badge bg-blue">
               <i class="fa fa-bell pull-right">10</i>
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-         
+         <ul class="treeview-menu">
+            <li><a href="compras.php"><i class="fa fa-circle-o"></i>Compras</a></li>
+            <li><a href="consultar_compras.php"><i class="fa fa-circle-o"></i>Consultar Compras</a></li>
+            <li><a href="consultar_compras_fecha.php"><i class="fa fa-circle-o"></i>Consultar Compras Fecha</a></li>
+            <li><a href="consultar_compras_mes.php"><i class="fa fa-circle-o"></i>Consultar Compras Mes</a></li>
+          </ul>
         </li>
 
            <li class="">
@@ -190,26 +196,51 @@
          
         </li>
 
-         <li class="">
+         <li class="treeview">
           <a href="ventas.php">
             <i class="fa fa-suitcase" aria-hidden="true"></i> <span>Ventas</span>
             <span class="pull-right-container badge bg-blue">
               <i class="fa fa-bell pull-right">8</i>
             </span>
           </a>
-         
+          <ul class="treeview-menu">
+            <li><a href="ventas.php"><i class="fa fa-circle-o"></i>Ventas</a></li>
+            <li><a href="consultar_ventas.php"><i class="fa fa-circle-o">Consultar Ventas</i></a></li>
+            <li><a href="consultar_ventas_fecha.php"><i class="fa fa-circle-o">Consultar Ventas Fecha</i></a></li>
+            <li><a href="consultar_ventas_mes.php"><i class="fa fa-circle-o"></i>Consultar Ventas Mes</a></li>
+          </ul>
         </li>
 
-        <li class="">
-          <a href="ventas.php">
-            <i class="fa fa-print" aria-hidden="true"></i> <span>Reportes</span>
-            <span class="pull-right-container badge bg-blue">
-              <i class="fa fa-bell pull-right">8</i>
-            </span>
+        <li class="treeview">
+          <a href="reporte_compras.php">
+            <i class="fa fa-bar-chart" aria-hidden="true"></i><span>
+              Reporte de Compras </span>
+              <span class="pull-right-container badge bg-blue">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
           </a>
-         
+
+          <ul class="treeview-menu">
+            <li><a href="reporte_general_compras.php"><i class="fa fa-circle-o"></i>Reporte General Compras</a></li>
+            <li><a href="reporte_compras_mensual.php"><i class="fa fa-circle-o"></i>Reporte Mensual Compras</a></li>
+            <li><a href="reporte_compras_proveedor.php"><i class="fa fa-circle-o"></i>Reporte Compras-Proveedor</a></li>
+          </ul>
         </li>
 
+        <li class="treeview">
+          <a href="reporte_ventas.php">
+            <i class="fa fa-pie-chart" aria-hidden="true"></i><span>
+              Reporte Ventas </span>
+              <span class="pull-right-container badge bg-blue">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="reporte_general_ventas.php"><i class="fa fa-circle-o"></i>Reporte General Ventas </a></li>
+            <li><a href="reporte_ventas_mensual.php"><i class="fa fa-circle-o"></i>Reporte Ventas Mensual </a></li>
+            <li><a href="reporte_ventas_cliente.php"><i class="fa fa-circle-o"></i>Reporte Ventas Cliente </a></li>
+          </ul>
+        </li>
 
         <li class="">
           <a href="usuarios.php">
@@ -218,7 +249,7 @@
               <i class="fa fa-bell pull-right">3</i>
             </span>
           </a>
-         
+    
         </li>
 
          <li class="">
@@ -229,6 +260,14 @@
             </span>
           </a>
          
+        </li>
+
+        <li class="">
+          <a href="">
+            <i class="fa fa-building" aria-hidden="true"></i><span>
+              Empresa 
+            </span>
+          </a>
         </li>
        
       </ul>
