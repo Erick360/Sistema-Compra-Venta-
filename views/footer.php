@@ -261,6 +261,29 @@
 
   <!--LIBRERIA DE MENSAJE MODAL-->
 <script src="js/bootbox.min.js"></script>
+<!--BOOTSTRAP FILE STYLE-->
+
+<script src="../public/bootstrap-filestyle/src/bootstrap-filestyle.min.js"></script>
+
+
+<script>  
+  //PRODUCTO
+  $(":file").filestyle({input: false, buttonText: "Agregar Imagen",buttonName: "btn-primary"});
+</script>
+
+<!--CAMPO FECHA - DATEPICKER - PRODUCTOS-->
+<script>      
+      $('#datepicker').datepicker({
+      /*dateFormat: 'dd-mm-yy',
+      autoclose: true*/
+       format: "dd/mm/yyyy",
+        /*clearBtn: true,
+        language: "es",*/
+        autoclose: true,
+        /*keyboardNavigation: false,
+        todayHighlight: true*/
+    })
+</script>
 
 </body>
 </html>
