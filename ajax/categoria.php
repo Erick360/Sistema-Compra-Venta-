@@ -1,9 +1,9 @@
 <?php 
 require_once("../config/conexion.php");
 require_once("../models/Categorias.php");
-
+require_once("../models/Productos.php");
 $categorias = new Categoria();
-
+$productos = new Producto();
  //declaramos las variables de los valores que se envian por el formulario y que recibimos por ajax y decimos que si existe el parametro que estamos recibiendo
    
    //los valores vienen del atributo name de los campos del formulario
@@ -124,7 +124,10 @@ $categorias = new Categoria();
 	      if(is_array($datos)==true and count($datos)>0){
               //edita el estado de la categoria
 		      $categorias->editar_estado($_POST["id_categoria"],$_POST["est"]);		     
-	        } 
+	      
+          //edita el estado del producto
+          $productos->editar_estado_producto_por_categoria($_POST["id_categoria"],$_POST["est"]);
+        } 
 
     break;
 

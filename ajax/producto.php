@@ -6,6 +6,7 @@ require_once("../models/Productos.php");
 
 $productos = new Producto();
 
+
 //declaramos las variables de los valores que se envian por el formulario y que recibimos por ajax y decimos que si existe el parametro que estamos recibiendo
  
  //los valores vienen del atributo name de los campos del formulario
@@ -149,8 +150,9 @@ case 'mostrar':
                  //edita el estado del producto
                  $productos->editar_estado($_POST["id_producto"],$_POST["est"]);
    
-                  //editar estado de la categoria por producto
+                //editar estado de la categoria por producto
                $productos->editar_estado_categoria_por_producto($_POST["id_categoria"],$_POST["est"]);
+               
                }    
         break;
    
